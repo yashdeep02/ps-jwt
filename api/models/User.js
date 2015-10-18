@@ -17,7 +17,6 @@ exports.model = mongoose.model('User', UserSchema);
 
 UserSchema.pre('save', function(next) {
 	var user = this;
-	
 	if (!user.isModified('password')) {
 		return next();
 	}
